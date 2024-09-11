@@ -16,24 +16,24 @@ Before using this configuration, make sure you have the following:
 This Terraform configuration will provision the following resources:
 
 ### 1. VPC and Subnet:
-a. A Virtual Private Cloud (VPC) with CIDR block 10.0.0.0/16.
-b. A subnet inside the VPC with CIDR block 10.0.0.0/24.
+- A Virtual Private Cloud (VPC) with CIDR block 10.0.0.0/16.
+- A subnet inside the VPC with CIDR block 10.0.0.0/24.
 ### 2. Security Group:
 
-a. A security group that allows HTTPS (port 443) ingress and all outbound traffic.
+- A security group that allows HTTPS (port 443) ingress and all outbound traffic.
 ### 3. EC2 Instance:
 
-a. An EC2 instance (t3.medium) using a specific AMI, deployed in the subnet and secured by the security group.
+- An EC2 instance (t3.medium) using a specific AMI, deployed in the subnet and secured by the security group.
 ### 4. AWS AppStream Fleet and Stack:
 
-a. An AppStream fleet with one ON_DEMAND instance of type stream.standard.medium.
-b. A stack allowing various user actions such as clipboard copy, file uploads/downloads, and printing to local devices.
+- An AppStream fleet with one ON_DEMAND instance of type stream.standard.medium.
+- A stack allowing various user actions such as clipboard copy, file uploads/downloads, and printing to local devices.
 ### 5. AWS AppStream User and Associations:
 
-a. A user with USERPOOL authentication is created and associated with the AppStream stack.
+- A user with USERPOOL authentication is created and associated with the AppStream stack.
 ### 6. Image Builder:
 
-a. An AppStream image builder is set up to customize images.
+- An AppStream image builder is set up to customize images.
 ## Usage
 1. Clone the repository to your local machine:
 
@@ -62,8 +62,8 @@ terraform apply
 terraform destroy
 ```
 ## Notes
-A. The AppStream fleet uses the default image AppStream-WinServer2019-10-05-2022. You can customize this in the aws_appstream_fleet resource.
-B. The user created in the aws_appstream_user resource is currently set to iniemem@clessence.com. Please update this to your own user information if required.
+- The AppStream fleet uses the default image AppStream-WinServer2019-10-05-2022. You can customize this in the aws_appstream_fleet resource.
+- The user created in the aws_appstream_user resource is currently set to iniemem@clessence.com. Please update this to your own user information if required.
 ## Security
-A. Ensure that any sensitive information, such as email addresses or keys, is kept secure.
-B. The SSH key pair name (test-appstream) used for EC2 instances should be available in your AWS account. If not, modify it as needed.
+- Ensure that any sensitive information, such as email addresses or keys, is kept secure.
+- The SSH key pair name (test-appstream) used for EC2 instances should be available in your AWS account. If not, modify it as needed.

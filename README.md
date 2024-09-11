@@ -38,7 +38,7 @@ This Terraform configuration will provision the following resources:
 1. Clone the repository to your local machine:
 
 ```bash
-git clone [<your-repo-url>](https://github.com/EhmeeUd/Appstream.git
+git clone https://github.com/EhmeeUd/Appstream.git
 ```
 2. Initialize the Terraform workspace:
 
